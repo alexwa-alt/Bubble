@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bubble Cluster Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <label class="file-label" for="csvInput">Upload CSV</label>
+    <input id="csvInput" type="file" accept=".csv,text/csv" />
+    <button id="resetLayoutBtn" type="button">Reset Layout</button>
+    <button id="clearMergesBtn" type="button">Clear All Merges</button>
+    <button id="exportBtn" type="button">Export Structure</button>
+    <label class="checkbox-label" for="showFullContentToggle">
+      <input id="showFullContentToggle" type="checkbox" />
+      Show full merged content
+    </label>
+  </header>
+
+  <main class="canvas-wrap">
+    <canvas id="bubbleCanvas" aria-label="Bubble clustering canvas"></canvas>
+    <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
