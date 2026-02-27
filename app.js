@@ -520,8 +520,13 @@
   }
 
   function addBubbleFromInput() {
-    const text = state.addBubbleInput.value.trim();
-    if (!text) return;
+    let text = state.addBubbleInput.value.trim();
+    if (!text) {
+      const prompted = window.prompt('Enter bubble text');
+      if (!prompted) return;
+      text = prompted.trim();
+      if (!text) return;
+    }
     const bubble = createBubble(text);
     bubble.x = clamp(state.width / 2 + (Math.random() * 100 - 50), bubble.radius + 10, state.width - bubble.radius - 10);
     bubble.y = clamp(state.height / 2 + (Math.random() * 100 - 50), bubble.radius + 10, state.height - bubble.radius - 10);
