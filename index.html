@@ -10,6 +10,7 @@
   <header class="toolbar">
     <label class="file-label" for="csvInput">Upload CSV</label>
     <input id="csvInput" type="file" accept=".csv,text/csv" />
+    <button id="addBubbleBtn" type="button">Add Bubble</button>
     <button id="resetLayoutBtn" type="button">Reset Layout</button>
     <button id="clearMergesBtn" type="button">Clear All Merges</button>
     <button id="exportBtn" type="button">Export Structure</button>
@@ -17,11 +18,27 @@
       <input id="showFullContentToggle" type="checkbox" />
       Show full merged content
     </label>
+    <div id="colorPalette" class="palette" aria-label="Bubble color palette">
+      <button class="swatch" data-color="#3b82f6" style="--swatch:#3b82f6" title="Blue"></button>
+      <button class="swatch" data-color="#ef4444" style="--swatch:#ef4444" title="Red"></button>
+      <button class="swatch" data-color="#22c55e" style="--swatch:#22c55e" title="Green"></button>
+      <button class="swatch" data-color="#f59e0b" style="--swatch:#f59e0b" title="Amber"></button>
+      <button class="swatch" data-color="#a855f7" style="--swatch:#a855f7" title="Purple"></button>
+      <button class="swatch" data-color="#0f172a" style="--swatch:#0f172a" title="Slate"></button>
+    </div>
   </header>
 
-  <main class="canvas-wrap">
-    <canvas id="bubbleCanvas" aria-label="Bubble clustering canvas"></canvas>
-    <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+  <main class="app-main">
+    <section class="canvas-wrap">
+      <canvas id="bubbleCanvas" aria-label="Bubble clustering canvas"></canvas>
+      <div id="renameZone" class="drop-zone zone-top">Drop here to rename bubble</div>
+      <div id="binZone" class="drop-zone zone-bottom">Drop here to bin bubble</div>
+      <div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+    </section>
+    <aside class="bin-panel">
+      <h2>Bin</h2>
+      <ul id="binList"></ul>
+    </aside>
   </main>
 
   <script src="app.js"></script>
