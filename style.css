@@ -73,9 +73,9 @@ button:hover, .file-label:hover { border-color: var(--primary); }
 
 .app-main { flex: 1; min-height: 0; display: flex; }
 
-.canvas-wrap { position: relative; flex: 1; min-width: 0; }
+.canvas-wrap { position: relative; flex: 1; min-width: 0; min-height: 320px; height: 100%; }
 
-#bubbleCanvas { display: block; width: 100%; height: 100%; }
+#bubbleCanvas { display: block; width: 100%; height: 100%; background: #eef2ff; }
 
 .drop-zone {
   position: absolute;
